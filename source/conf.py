@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Intentional development with LLM and Clojure'
+project = 'Agentic Engineering with Clojure'
 copyright = '2026, Ivan Willig'
 author = 'Ivan Willig'
 
