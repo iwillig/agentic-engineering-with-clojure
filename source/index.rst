@@ -31,10 +31,10 @@ age of Agentic Engineering.
 The author's hope is that this book will keep Clojure relevant in this
 era.
 
-Installation
-------------
-
-
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
+   installation
+   repl-development
+   testing
