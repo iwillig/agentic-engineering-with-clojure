@@ -23,7 +23,7 @@ Opencode is a complete coding editor designed to complete with `Claude
 Code <https://code.claude.com/docs/en/overview>`_ or `Codex
 <https://openai.com/codex/>`_.
 
-OpenCode has both an Native UI and  TUI version.
+OpenCode has both an Native UI and TUI version.
 
 .. code-block:: console
 
@@ -43,17 +43,20 @@ simplicity. PI Agent is only an TUI.
 Install Clojure MCP
 -------------------
 
-Clojure is
+`Clojure MCP <https://github.com/bhauman/clojure-mcp>`_ is an advance
+MCP server for working with Clojure. It includes toosl for running
+Clojure Code via the REPL, and advance tools for editing Clojure code.
 
 .. code-block:: console
 
    clojure -Ttools install-latest :lib io.github.bhauman/clojure-mcp :as mcp
 
 
-
 Install Clojure MCP Light
 -------------------------
 
+`Clojure MCP Light <https://github.com/bhauman/clojure-mcp-light>`_ is
+a command line tool for evaluating Clojure code.
 
 .. code-block:: console
 
