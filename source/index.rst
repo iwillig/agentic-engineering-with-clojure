@@ -6,9 +6,9 @@
 Agentic Engineering with Clojure
 ================================
 
-This book is a guide on how to best use the Clojure Programming
+This manual is a guide on how to best use the Clojure Programming
 language and LLM coding agents. It is a reflection of a year of
-constant use. I hope this book helps you get the most out of Clojure
+constant use. I hope this manual helps you get the most out of Clojure
 and LLM agents.
 
 Why
@@ -22,19 +22,23 @@ set is dominated by TypeScript, Python and C, there is a fear that
 more unorthodox languages will come under threat.
 
 Over the past year, intense development with LLM based agents has led the
-authors of this book to the opposite conclusion. The fundamentals of
+authors of this manual to the opposite conclusion. The fundamentals of
 the Clojure language make it an excellent language for agentic
 development. Specifically, Clojure’s focus on functional programming,
 REPL based development and intentional development lends itself to the
 age of Agentic Engineering.
 
-The author's hope is that this book will keep Clojure relevant in this
+The author's hope is that this manual will keep Clojure relevant in this
 era.
+
+This manual is designed to cover both working with Clojure from LLM
+based agents and building LLM agents with Clojure.
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    installation
+   agentic-toolchain
    repl-development
    testing

@@ -5,6 +5,9 @@ name = "pypi"
 
 [packages]
 sphinx = "*"
+sphinxcontrib-plantuml = "*"
+sphinx-copybutton = "*"
+sphinx-design = "*"
 
 [dev-packages]
 

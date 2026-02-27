@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "754e79713c31be397f01193f41595689f785dc7a1716dfddb8c71d74407464fe"
+            "sha256": "ec4fdb174611f4582480d651ad37f3f0dae46a2e9625b4728aed5e15e6a383d0"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -335,6 +335,24 @@
             "markers": "python_version >= '3.12'",
             "version": "==9.1.0"
         },
+        "sphinx-copybutton": {
+            "hashes": [
+                "sha256:4cf17c82fb9646d1bc9ca92ac280813a3b605d8c421225fd9913154103ee1fbd",
+                "sha256:fb543fd386d917746c9a2c50360c7905b605726b9355cd26e9974857afeae06e"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.7'",
+            "version": "==0.5.2"
+        },
+        "sphinx-design": {
+            "hashes": [
+                "sha256:d2a3f5b19c24b916adb52f97c5f00efab4009ca337812001109084a740ec9b7a",
+                "sha256:f82bf179951d58f55dca78ab3706aeafa496b741a91b1911d371441127d64282"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.11'",
+            "version": "==0.7.0"
+        },
         "sphinxcontrib-applehelp": {
             "hashes": [
                 "sha256:2f29ef331735ce958efa4734873f084941970894c6090408b079c61b2e1c06d1",
@@ -366,6 +384,13 @@
             ],
             "markers": "python_version >= '3.5'",
             "version": "==1.0.1"
+        },
+        "sphinxcontrib-plantuml": {
+            "hashes": [
+                "sha256:fd74752f8ea070e641c3f8a402fccfa1d4a4056e0967b56033d2a76282d9f956"
+            ],
+            "index": "pypi",
+            "version": "==0.31"
         },
         "sphinxcontrib-qthelp": {
             "hashes": [
