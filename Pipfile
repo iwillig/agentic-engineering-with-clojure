@@ -8,6 +8,7 @@ sphinx = "*"
 sphinxcontrib-plantuml = "*"
 sphinx-copybutton = "*"
 sphinx-design = "*"
+furo = "*"
 
 [dev-packages]
 

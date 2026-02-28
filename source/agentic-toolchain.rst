@@ -25,9 +25,59 @@ Code <https://code.claude.com/docs/en/overview>`_ or `Codex
 
 OpenCode has both an Native UI and TUI version.
 
-.. code-block:: console
+.. code-block:: bash
 
    brew install anomalyco/tap/opencode
+
+Open Code Configuration
+^^^^^^^^^^^^^^^^^^^^^^^
+
+OpenCode configured via a `opencode.json
+<https://opencode.ai/docs/config/>`_ file in your projects root folder
+of the project. You can also define a global configuration file.
+
+A common development pattern with OpenCode is to configure a custom
+System Prompt with the standard editing tools. In the below
+configuration, we are using the standard editing tools with the
+`clojure-lsp` tool for validating edits.
+
+.. code-block:: json
+
+    {
+      "$schema": "https://opencode.ai/config.json",
+      "autoupdate": true,
+      "model": "anthropic/claude-sonnet-4-5",
+      "agent": {
+        "clojure_build": {
+          "mode": "primary",
+          "model": "anthropic/claude-sonnet-4-5",
+          "prompt": "{file:./clojure_build.md}",
+          "tools": {
+            "write": true,
+            "edit": true,
+            "read": true,
+            "bash": true
+          }
+        }
+      },
+      "mcp": {},
+      "lsp": {
+        "clojure-lsp": {
+          "command": ["/opt/homebrew/bin/clojure-lsp"],
+          "extensions": [".clj", ".cljs", ".cljc", ".edn", ".bb"],
+          "env": {
+            "CLOJURE_LSP_LOG_LEVEL": "info"
+          },
+          "initialization": {
+            "initializationOptions": {
+              "project-root-uri-as-project-root?": true,
+              "text-document-sync-kind": 2
+            }
+          }
+        }
+      }
+    }
+
 
 Install PI Agent
 ----------------
@@ -35,9 +85,15 @@ Install PI Agent
 PI Agent is a TypeScript based coding agent that is designed for
 simplicity. PI Agent is only an TUI.
 
-.. code-block:: console
+.. code-block:: bash
 
    npm install -g @mariozechner/pi-coding-agent
+
+
+PI Agent Configuration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
 
 
 Install Clojure MCP
@@ -47,7 +103,7 @@ Install Clojure MCP
 MCP server for working with Clojure. It includes toosl for running
 Clojure Code via the REPL, and advance tools for editing Clojure code.
 
-.. code-block:: console
+.. code-block:: bash
 
    clojure -Ttools install-latest :lib io.github.bhauman/clojure-mcp :as mcp
 
@@ -58,6 +114,14 @@ Install Clojure MCP Light
 `Clojure MCP Light <https://github.com/bhauman/clojure-mcp-light>`_ is
 a command line tool for evaluating Clojure code.
 
-.. code-block:: console
+.. code-block:: bash
 
    bbin install https://github.com/bhauman/clojure-mcp-light.git --tag v0.2.1
+
+.. code-block:: bash
+
+   bbin install https://github.com/bhauman/clojure-mcp-light.git --tag v0.2.1 --as clj-nrepl-eval --main-opts '["-m" "clojure-mcp-light.nrepl-eval"]'
+
+.. code-block:: bash
+
+   bbin install https://github.com/bhauman/clojure-mcp-light.git --tag v0.2.1 --as clj-paren-repair --main-opts '["-m" "clojure-mcp-light.paren-repair"]'

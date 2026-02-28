@@ -1,11 +1,35 @@
 Installation
-============
+------------
 
 This section covers how to install Clojure and set up your development
-environment for agentic engineering.
+environment for agentic engineering. We are going to use tools from
+Node.js and Python as well.
 
 Prerequisites
--------------
+^^^^^^^^^^^^^
+
+All of the below dependencies can be installed via this homebrew Brewfile.
+
+.. code-block:: text
+
+    brew "pandoc"
+    brew "qemu"
+    brew "clojure/tools/clojure"
+    brew "borkdude/brew/babashka"
+    brew "babashka/brew/bbin"
+    brew "clojure-lsp/brew/clojure-lsp-native"
+    brew "node"
+    brew "pipx"
+    brew "anomalyco/tap/opencode"
+
+.. code-block:: bash
+
+    brew bundle
+
+Each tool is defined with specific install instructions.
+
+SDKMAN
+^^^^^^
 
 This manual assumes a Unix style operating system, MacOS or Linux.
 
@@ -14,25 +38,49 @@ You will need the JVM installed. We suggest that you use the `SDKMAN
 instances. For this work, we are going to use the latest version of
 `GraalVM <https://www.graalvm.org/>`_
 
-.. code-block:: console
+.. code-block:: bash
 
-    # curl -s "https://get.sdkman.io" | bash
+    curl -s "https://get.sdkman.io" | bash
 
 
 After we have installed SDKMAN, let's go ahead and install GraalVM 25.
 
-.. code-block:: console
+.. code-block:: bash
 
     sdk install java 25.0.2-graalce
 
+Pandoc
+^^^^^^
+
+Pandoc is a power tool for document transformation and validation. We
+are going to use pandoc in our manual.
+
+.. code-block:: bash
+
+    brew install pandoc
+
+Qemu
+^^^^^
+
+We are going to use Qemu with Gondolin. Its a native dependency
+installed via brew.
+
+.. code-block:: bash
+
+    brew install qemu
+
+
+Clojure
+-------
+
 Installing Clojure
-------------------
+^^^^^^^^^^^^^^^^^^
 
 Now let's install the Clojure command line tools. If you use `Homebrew
 <https://brew.sh/>`_, you can install the Clojure command line tools
 with the following command:
 
-.. code-block:: console
+.. code-block:: bash
 
     brew install clojure/tools/clojure
 
@@ -40,56 +88,100 @@ with the following command:
 See the `Clojure documentation for more details
 <https://clojure.org/guides/install_clojure>`_
 
-Installing Babashka
--------------------
+Install Babashka
+^^^^^^^^^^^^^^^^
 
-Installing bbin
----------------
+`Babashka <https://github.com/babashka/babashka>`_ is a native Clojure
+interpreter for scripting with fast startup.
+
+.. code-block:: bash
+
+   brew install borkdude/brew/babashka
+
+
+Install bbin
+^^^^^^^^^^^^
 
 `Bbin <https://github.com/babashka/bbin>`_ is a tool for installing
 Babashka scripts
 
-.. code-block:: console
+.. code-block:: bash
 
    brew install babashka/brew/bbin
 
+Install clojure-lsp
+^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+    brew install clojure-lsp/brew/clojure-lsp-native
+
+NodeJS
+------
+
 Install NodeJS
---------------
+^^^^^^^^^^^^^^
 
-Now let's install `Node.js <https://nodejs.org/en/download>`_:
+There are a lot of AI tools written in NodeJS. Now let's install
+`Node.js <https://nodejs.org/en/download>`_:
 
-.. code-block:: console
+.. code-block:: bash
 
    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+
+.. code-block:: bash
 
    nvm install 24
 
 
+
+Python
+------
+
+Install Python
+^^^^^^^^^^^^^^
+
+Python is one of the default languages for working with LLM
+Agents. There are serveral important libraries and tools that we are
+going to be reviewing for this manual. There are lot of Python build
+tools, but we are going to use `pipenv
+<https://pipenv.pypa.io/en/latest/>`_.
+
+Lets install `pipx <https://github.com/pypa/pipx>`_ for install global
+python tools.
+
+.. code-block:: bash
+
+   brew install pipx
+
+.. code-block:: bash
+
+   pipx install pipenv
+
+.. code-block:: bash
+
+   pipx install llm
+
+
 Verifying Your Installation
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Let's make sure everything is installed correctly.
 
 Verify Java
 
-.. code-block:: console
+.. code-block:: bash
 
    java --version
 
-   ## java 25.0.1 2025-10-21 LTS
-   ## Java(TM) SE Runtime Environment Oracle GraalVM 25.0.1+8.1 (build 25.0.1+8-LTS-jvmci-b01)
-   ## Java HotSpot(TM) 64-Bit Server VM Oracle GraalVM 25.0.1+8.1 (build 25.0.1+8-LTS-jvmci-b01, mixed mode, sharing)
-
 Verify Clojure
 
-.. code-block:: console
+.. code-block:: bash
 
    clojure --version
-   ## Clojure CLI version 1.12.4.1582
 
 Verify Node.JS
 
-.. code-block:: console
+.. code-block:: bash
 
    node --version
-   ## v25.4.0
