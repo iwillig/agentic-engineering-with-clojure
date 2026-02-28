@@ -133,6 +133,12 @@ There are a lot of AI tools written in NodeJS. Now let's install
 
    nvm install 24
 
+Gondolin
+^^^^^^^^
+
+.. code-block:: bash
+
+    npm install -g @earendil-works/gondolin
 
 
 Python
