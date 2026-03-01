@@ -12,9 +12,9 @@ browsers (Firefox, Chrome, Edge, Safari) and provides a comprehensive
 set of operations for navigation, element interaction, JavaScript
 execution, and page inspection.
 
-By combinding clj-nrepl-eval and etaoin, we have a powerful agentic
-broswer that can be used to verify web applications. It is then a
-small step to take your exporlations on the REPL and translate them
+By combining clj-nrepl-eval and etaoin, we have a powerful agentic
+browser that can be used to verify web applications. It is then a
+small step to take your explorations on the REPL and translate them
 into a TEST.
 
 Installation
