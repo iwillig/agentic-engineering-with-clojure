@@ -40,5 +40,6 @@ based agents and building LLM agents with Clojure.
 
    installation
    agentic-toolchain
+   agentic-browser
    repl-development
    testing

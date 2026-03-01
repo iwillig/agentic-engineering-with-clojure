@@ -1,0 +1,5 @@
+{:tasks {nrepl
+         {:doc "Run a nRepl"
+          :task
+          (do
+            (clojure "-M:nrepl"))}}}

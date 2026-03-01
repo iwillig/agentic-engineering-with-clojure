@@ -93,7 +93,21 @@ simplicity. PI Agent is only an TUI.
 PI Agent Configuration
 ^^^^^^^^^^^^^^^^^^^^^^
 
+There are a couple of ways to configure or customize PI Agent. The
+most common method that we are going to use is to override the System
+Prompt.
 
+In your project, you can create a new folder
+
+.. code-block:: bash
+
+    mkdir .pi
+    cd .pi
+    touch SYSTEM.md
+
+Please review the PI Agent configuration `documentation
+<https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent#customization>`_
+for more details.
 
 
 Install Clojure MCP
@@ -112,16 +126,47 @@ Install Clojure MCP Light
 -------------------------
 
 `Clojure MCP Light <https://github.com/bhauman/clojure-mcp-light>`_ is
-a command line tool for evaluating Clojure code.
+a command line tool for evaluating Clojure code. It also includes tools for fixing common
 
 .. code-block:: bash
 
-   bbin install https://github.com/bhauman/clojure-mcp-light.git --tag v0.2.1
+   bbin install \
+     https://github.com/bhauman/clojure-mcp-light.git \
+     --tag v0.2.1
+
+clj-nrepl-eval
+^^^^^^^^^^^^^^
+
+Clojure MCP Light includes a tool for evaluating Clojure code. This is
+a standard bash command that can be used in any Coding harness.
 
 .. code-block:: bash
 
-   bbin install https://github.com/bhauman/clojure-mcp-light.git --tag v0.2.1 --as clj-nrepl-eval --main-opts '["-m" "clojure-mcp-light.nrepl-eval"]'
+   bbin install \
+     https://github.com/bhauman/clojure-mcp-light.git \
+     --tag v0.2.1 \
+     --as clj-nrepl-eval \
+     --main-opts '["-m" "clojure-mcp-light.nrepl-eval"]'
+
+Now lets verify the install
 
 .. code-block:: bash
 
-   bbin install https://github.com/bhauman/clojure-mcp-light.git --tag v0.2.1 --as clj-paren-repair --main-opts '["-m" "clojure-mcp-light.paren-repair"]'
+   clj-nrepl-eval --discover-ports
+
+clj-paren-repair
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+   bbin install \
+     https://github.com/bhauman/clojure-mcp-light.git \
+     --tag v0.2.1 \
+     --as clj-paren-repair \
+     --main-opts '["-m" "clojure-mcp-light.paren-repair"]'
+
+And now lets verify the clj-paren-repair
+
+.. code-block:: bash
+
+    clj-paren-repair --help

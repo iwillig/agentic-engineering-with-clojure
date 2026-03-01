@@ -1,12 +1,12 @@
 Installation
-------------
+============
 
 This section covers how to install Clojure and set up your development
 environment for agentic engineering. We are going to use tools from
 Node.js and Python as well.
 
 Prerequisites
-^^^^^^^^^^^^^
+-------------
 
 All of the below dependencies can be installed via this homebrew Brewfile.
 
@@ -60,7 +60,7 @@ are going to use pandoc in our manual.
     brew install pandoc
 
 Qemu
-^^^^^
+^^^^
 
 We are going to use Qemu with Gondolin. Its a native dependency
 installed via brew.
@@ -136,6 +136,8 @@ There are a lot of AI tools written in NodeJS. Now let's install
 Gondolin
 ^^^^^^^^
 
+Gondolin is a local linux "micro" VM designed for isolating your AI Coding tool.
+
 .. code-block:: bash
 
     npm install -g @earendil-works/gondolin
@@ -160,9 +162,12 @@ python tools.
 
    brew install pipx
 
+
 .. code-block:: bash
 
    pipx install pipenv
+
+
 
 .. code-block:: bash
 
