@@ -93,11 +93,93 @@ simplicity. PI Agent is only an TUI.
 PI Agent Configuration
 ^^^^^^^^^^^^^^^^^^^^^^
 
-There are a couple of ways to configure or customize PI Agent. The
-most common method that we are going to use is to override the System
-Prompt.
+PI Agent allows you to configure what models and providers via two
+configuration files, ``settings.json`` and ``models.json``.
 
-In your project, you can create a new folder
+In your ``~/.pi/agent/settings.json`` you can define "enabledModels"
+and the defaultModel as follows.
+
+.. code-block:: json
+
+    {
+      "defaultModel": "claude-sonnet-4-5",
+      "defaultProvider": "anthropic",
+      "defaultThinkingLevel": "off",
+      "enabledModels": [
+        "ollama/qwen3.5:0.8b",
+        "ollama/qwen3.5:2b",
+        "huggingface/moonshotai/Kimi-K2.5",
+        "anthropic/claude-opus-4-5",
+        "anthropic/claude-sonnet-4-5",
+        "anthropic/claude-sonnet-4-6",
+        "anthropic/claude-opus-4-6"
+      ],
+      "hideThinkingBlock": false,
+      "lastChangelogVersion": "0.55.4",
+      "packages": [
+        "npm:@tmustier/pi-usage-extension",
+        "npm:pi-mcp-adapter",
+        "npm:pi-interactive-shell",
+        "npm:pi-ask-tool-extension"
+      ]
+    }
+
+Here are two examples, for running PI Agent against Hugging Face and
+via Ollama via in ``~/.pi/agent/models.json``
+
+.. code-block:: json
+
+    {
+      "providers": {
+        "huggingface": {
+          "api": "openai-completions",
+          "apiKey": "HF_TOKEN",
+          "baseUrl": "https://router.huggingface.co/v1",
+          "models": [
+            {
+              "compat": {
+                "supportsDeveloperRole": false
+              },
+              "contextWindow": 128000,
+              "cost": {
+                "cacheRead": 0,
+                "cacheWrite": 0,
+                "input": 0,
+                "output": 0
+              },
+              "id": "moonshotai/Kimi-K2",
+              "input": [
+                "text"
+              ],
+              "maxTokens": 16384,
+              "name": "Kimi K2",
+              "reasoning": true
+            }
+          ]
+        },
+        "ollama": {
+          "api": "openai-completions",
+          "apiKey": "ollama",
+          "baseUrl": "http://127.0.0.1:11434/v1",
+          "models": [
+            {
+              "id": "qwen3.5:0.8b"
+            },
+            {
+              "id": "qwen3.5:2b"
+            }
+          ]
+        }
+      }
+    }
+
+
+
+PI Agent System Prompt
+^^^^^^^^^^^^^^^^^^^^^^
+
+We want to override the default system prompt for Clojure
+development. In your application project, you can create a new folder.
 
 .. code-block:: bash
 
