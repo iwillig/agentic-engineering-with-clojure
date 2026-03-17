@@ -3,6 +3,38 @@ Changelog
 
 This document tracks the evolution of the *Agentic Engineering with Clojure* manual.
 
+[0.5.0] - 2026-03-17
+--------------------
+
+Changed
+~~~~~~~
+
+- Expanded ``repl-development.rst`` from stub placeholders into a full chapter:
+
+  - **What is the REPL?** -- Introduced the REPL concept and its role in
+    preventing LLM hallucinations
+  - **Starting the REPL** -- Added ``deps.edn`` setup for ``nrepl`` and
+    ``cider-nrepl``, startup commands, and ``clj-nrepl-eval`` connection example
+  - **Reload** -- Added ``clj-reload`` integration and the passive-prompting
+    technique of printing docstrings on namespace load
+  - **Interactive Development** -- Explained REPL-grounded workflow for LLM
+    agents: evaluation gives facts from the running system instead of guesses
+    from training data
+  - **The REPL as Hallucination Prevention** -- New section covering:
+
+    - Validation-before-saving discipline with a ``sum-evens`` worked example
+    - Exploration-before-use pattern using ``clojure.repl/doc``, ``dir``,
+      ``apropos``, ``find-doc``, and ``source``
+    - Codebase awareness via ``require`` + ``clojure.repl/dir``
+
+  - **The Paren Edit Death Loop** -- Documented the delimiter-repair cycle that
+    LLM agents fall into and how ``clj-paren-repair`` breaks it
+  - **Passive Prompting Through the REPL** -- Technique for printing docstrings
+    on dev-namespace reload to keep agents informed without repetition
+  - **Best Practices** -- New sub-sections on keeping the nREPL process running,
+    test fixtures and ``clojure.test/run-test-var``, and pipeline debugging with
+    intermediate ``def`` bindings
+
 [0.4.0] - 2026-03-05
 --------------------
 
